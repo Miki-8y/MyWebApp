@@ -1,0 +1,131 @@
+create table writeinfos (
+id INTEGER primary key,
+username VARCHAR(40),
+write_time VARCHAR(20),
+message VARCHAR(600)
+);
+
+create table subwriteinfos (
+subid INTEGER,
+id INTEGER,
+username VARCHAR(40),
+write_time VARCHAR(20),
+message VARCHAR(600)
+);
+
+create table accounts (
+    username VARCHAR(40) primary key,
+    salt VARCHAR(40),
+    hashed VARCHAR(40),
+    algo CHAR(5),
+    write_word VARCHAR(30)
+);
+
+create table questions (
+    question_num INTEGER primary key,
+    japanese VARCHAR(100),
+    english VARCHAR(200),
+    eanswer_word VARCHAR(30),
+    janswer_word VARCHAR(30)
+);
+
+insert into questions values(1,'とにかくやってみよう．','Let`s try _____.','anyway','とにかく');
+insert into questions values(2,'スピーチに続いて，夕食を取った．','_____ the speech, we had dinner.','following','に続いて');
+insert into questions values(3,'地図を参照してください．','Please _____ to the map.','refer','参照して');
+insert into questions values(4,'チケットはオンラインで入手可能です．','Tickets are _____ online.','available','入手可能');
+insert into questions values(5,'営業部','the sales _____','department','部');
+insert into questions values(6,'大きな会議室','a large _____ room','conference','会議');
+insert into questions values(7,'メールによると','_____ to the e-mail','according','によると');
+insert into questions values(8,'女性はおそらく誰ですか．','Who most _____ is the woman?','likely','おそらく');
+insert into questions values(9,'男性は何をすることを申し出ていますか．','What does the man _____ to do?','offer','申し出て');
+insert into questions values(10,'新しいオフィス機器','new office _____','equipment','機器');
+insert into questions values(11,'あなたのメールアドレスを提供してください．','Please _____ me with your e-mail address.','provide','提供して');
+insert into questions values(12,'地元の会社','_____ businesses','local','地元の');
+insert into questions values(13,'チケットを購入する','_____ tickets','purchase','購入する');
+insert into questions values(14,'仕事の空き','a job _____','opening','空き');
+insert into questions values(15,'建設プロジェクト','_____ project','construction','建設');
+insert into questions values(16,'工場を見学している間','while _____ing the factory','tour','見学');
+insert into questions values(17,'市場調査','market _____','research','調査');
+insert into questions values(18,'会議に出席する','a _____ a meeting','attend','出席する');
+insert into questions values(19,'配達日を変更する','change a _____ date','delivery','配達');
+insert into questions values(20,'私は最近プリンターを買った．','I _____ bought a printer.','recently','最近');
+insert into questions values(21,'加藤さんについて何が表示されていますか．','What is _____d about Mr. Kato?','indicate','示されて');
+insert into questions values(22,'ホテルの従業員','an _____ of a hotel','employee','従業員');
+insert into questions values(23,'追加のスタッフを要請する','request _____ staff','additional','追加の');
+insert into questions values(24,'顧客アンケート調査','a customer _____','survey','アンケート調査');
+insert into questions values(25,'報告書に目を通す','_____ a report','review','目を通す');
+insert into questions values(26,'最近テックスを見ていない．','I haven`t seen Tex _____.','lately','最近');
+insert into questions values(27,'なぜあなたはこの職業を選んだのですか．','Why did you choose this _____.','profession','職業');
+insert into questions values(28,'上司の許可','permission from a _____','supervisor','上司');
+insert into questions values(29,'製品が安全であることを保証する','_____ that the products are safe','ensure','保証する');
+insert into questions values(30,'読書からの何百もの提出物','hundreds of _____s from readers','submission','提出物');
+insert into questions values(31,'従業員に変更を知らせる','_____ employees of the change','notify','知らせる');
+insert into questions values(32,'私は絶対にその品物が必要だ．','I _____ need the item.','definitely','絶対に');
+insert into questions values(33,'社員は有給休暇を受け取る資格がある．','Employees are _____ to receive paid holidays.','eligible','資格がある');
+insert into questions values(34,'すべての書類の準備ができています．','All the _____ is ready.','paperwork','書類');
+insert into questions values(35,'無料の朝食','a _____ breakfast','complimentary','無料の');
+insert into questions values(36,'計画を修正する','_____ a plan','revise','修正する');
+insert into questions values(37,'注文を追跡する','_____ an order','track','追跡');
+insert into questions values(38,'管理アシスタント','an _____ assistant','administrative','管理');
+insert into questions values(39,'小売店','_____ stores','retail','小売');
+insert into questions values(40,'在庫を減らす','reduce _____','inventory','在庫');
+insert into questions values(41,'詳細な分析','_____ analysis','extensive','詳細');
+insert into questions values(42,'販促物','_____ materials','promotional','販促');
+insert into questions values(43,'仕出しサービス','_____ service','catering','仕出し');
+insert into questions values(44,'野生動物の写真家','a _____ photographer','wildlife','野生動物');
+insert into questions values(45,'私はその仕事を任された．','I have benn _____ed the work.','assign','任された');
+insert into questions values(46,'ホテルについて何がほのめかされていますか．','what is _____d about the hotel?','imply','ほのめかされています');
+insert into questions values(47,'私は夕食会を楽しみにしている．','I am looking forward to the _____.','banquet','夕食会');
+insert into questions values(48,'５月末まで有効な','_____ until the end of May','valid','有効な');
+insert into questions values(49,'質の高いサービスを手ごろな価格で提供する','provide quality service at _____ prices','affordable','手ごろな');
+insert into questions values(50,'新しく改装された図書館','a newly _____d library','renovate','改装された');
+insert into questions values(51,'製材業','a _____ business','lumber','製材');
+insert into questions values(52,'裏側','the _____ side','reverse','裏');
+insert into questions values(53,'参加は任意です．','Attendance is _____.','voluntary','任意');
+insert into questions values(54,'建設請負業者','a construction _____','contractor','請負業者');
+insert into questions values(55,'会社には社内の託児所があります．','The company has an _____ childcare center.','on-site','社内の');
+insert into questions values(56,'製品の総合的なリスト','a _____ list of products','comprehensive','総合的な');
+insert into questions values(57,'機密書類','_____ documents','confidential','機密');
+insert into questions values(58,'コンピュータ・プログラミングの専門知識','_____ in computer programming','expertise','専門知識');
+insert into questions values(59,'東京で最高のレストランの一つ','one of Tokyo`s _____ restaurants','premier','最高の');
+insert into questions values(60,'土産物店','a _____ shop','souvenir','土産物');
+insert into questions values(61,'川下りの旅','_____ trips','rafting','川下り');
+insert into questions values(62,'頭上のスペースの中に','in the overhead _____','compartment','スペース');
+insert into questions values(63,'生地サンプルをチェックする','check _____ samples','fabric','生地');
+insert into questions values(64,'広々とした部屋','a _____ room','spacious','広々とした');
+insert into questions values(65,'冷暖房システムを改良する','make _____s to the air conditioning system','upgrade','改良する');
+insert into questions values(66,'新製品を披露する','_____ new products','showcase','披露する');
+insert into questions values(67,'通勤者が乗る電車（通勤電車）','a _____ train','commuter','通勤者');
+insert into questions values(68,'顧客サービスを高める','_____ customer service','enhance','高める');
+insert into questions values(69,'貨物エレベーターを使う','use a _____ elevator','freight','貨物');
+insert into questions values(70,'同僚を賞に推薦する','_____ a colleague for an award','nominate','推薦する');
+insert into questions values(71,'製造が終了した電化製品','a _____ appliance','discontinued','製造が終了した');
+insert into questions values(72,'メンター制度プログラム','a _____ program','mentoring','メンター制度');
+insert into questions values(73,'個人に合わせたサービス','_____ service','personalized','個人に合わせた');
+insert into questions values(74,'薬局で働く','work at a _____','pharmacy','薬局');
+insert into questions values(75,'会議の抜粋','an _____ from a meeting','excerpt','抜粋');
+insert into questions values(76,'その後の数年間','the _____ years','subsequent','その後の');
+insert into questions values(77,'深く考えて書かれた記事','a _____ written article','thoughtfully','深く考えて');
+insert into questions values(78,'要約版','an _____ version','abridged','要約');
+insert into questions values(79,'従業員に相乗りすることを奨励する','encourage employees to _____','carpool','相乗りする');
+insert into questions values(80,'そのソフトはあなたのコンピュータと互換性があります．','The software is _____ with your computer.','compatible','互換性があります');
+insert into questions values(81,'この製品は有名人の推薦を受けている．','This product is _____d by celebrities.','endorse','推薦を受けている');
+insert into questions values(82,'明確な許可なしに','without _____ permission','explicit','明確な');
+insert into questions values(83,'リスクを痛感している','_____ aware of the risks','keenly','痛');
+insert into questions values(84,'記念の盾','a commemorative _____','plaque','盾');
+insert into questions values(85,'塗料を水で薄める','_____ paint with water','dilute','薄める');
+insert into questions values(86,'会員は料金を免除されます．','Menbers are _____ from the fee.','exempt','免除されます');
+insert into questions values(87,'中心に置かれる花飾り','flower _____s','centerpiece','中心におかれる');
+insert into questions values(88,'それはこちらの見落としです．','It`s an _____ on our part.','oversight','見落とし');
+insert into questions values(89,'あなたとお仕事ができて光栄です．','We are _____ to work with you.','privileged','光栄です');
+insert into questions values(90,'問題が再発することを防ぐ','prevent a problem from _____ring','recur','再発する');
+insert into questions values(91,'可能性に懐疑的な','_____ about the possibility','skeptical','懐疑的な');
+insert into questions values(92,'環境に優しいエネルギー','_____ enegy','sustainable','環境に優しい');
+insert into questions values(93,'古代エジプトの工芸品','ancient Egyptian _____s','artifact','工芸品');
+insert into questions values(94,'基調演説','_____ address','keynote','基調');
+insert into questions values(95,'その部屋は息をのむほどの眺めを提供しています．','The room offers a _____ view.','breathtaking','息をのむほどの');
+insert into questions values(96,'個人の作業スペースで作業する','work in a _____','cubicle','個人の作業スペース');
+insert into questions values(97,'電力の供給停止（停電）','a power _____','outage','供給停止');
+insert into questions values(98,'傷みやすい食品','_____ foot items','perishable','傷みやすい');
+insert into questions values(99,'熱心な読者','an _____ reader','avid','熱心');
+insert into questions values(100,'回り道をする','take a _____','detour','回り道');

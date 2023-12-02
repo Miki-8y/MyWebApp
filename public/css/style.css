@@ -1,0 +1,178 @@
+.fadeIn {
+    animation-name: fadeInAnime;
+    animation-duration:3s;
+    animation-fill-mode:forwards;
+    opacity: 0;
+    }
+    
+    @keyframes fadeInAnime{
+      0% {
+        opacity: 0;
+      }
+    
+      100% {
+        opacity: 1;
+      }
+    }
+
+/*menu*/
+.menu{
+    height: 20px;
+    position: fixed;
+    right: 100px;
+    top: 30px;
+    width: 30px;
+    z-index: 99;
+}
+.menu__line{
+    background: #000;
+    display: block;
+    height: 2px;
+    position: absolute;
+    transition:transform .3s;
+    width: 100%;
+}
+.menu__line--center{
+    top: 9px;
+}
+.menu__line--bottom{
+    bottom: 0;
+}
+.on .menu__line--top{
+    top: 8px;
+    transform: rotate(45deg);
+}
+.on .menu__line--center{
+    transform:scaleX(0);
+}
+.on .menu__line--bottom{
+    bottom: 10px;
+    transform: rotate(135deg);
+}
+.menu__circle-base{
+	left: -10px;
+	position: absolute;
+	top: -14px;
+	transform: rotate(-90deg);
+}
+.menu__circle{
+	opacity: 0;
+	stroke-dasharray: 0 144;
+	transition: 0.5s;	
+}
+.menu:hover .menu__circle{
+	opacity: 1;
+	stroke-dasharray: 144 144;
+}
+
+/*transition & delay*/
+.transition10{transition:all 1s cubic-bezier(0.190, 1.000, 0.220, 1.000);}
+.delay01{transition-delay: .1s;}
+.delay02{transition-delay: .2s;}
+.delay03{transition-delay: .3s;}
+.delay04{transition-delay: .4s;}
+.delay05{transition-delay: .5s;}
+.delay06{transition-delay: .6s;}
+.delay07{transition-delay: .7s;}
+.delay08{transition-delay: .8s;}
+.delay09{transition-delay: .9s;}
+.delay10{transition-delay: 1s;}
+.delay11{transition-delay: 1.1s;}
+
+/*fullnav*/
+.fullnav{
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;    
+}
+
+/*fullnav__nav*/
+.fullnav__nav{
+    align-items: center;
+    background: #fff;
+    display: flex;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 0;
+}
+/*gnav*/
+.gnav{
+    margin: 0 auto;
+    width: 40%;
+}
+.gnav__menu{
+    list-style: none;
+}
+.gnav__menu__item{
+    margin:20px 0;
+    opacity: 0;
+    transform: translateY(100px);
+}
+.gnav a{
+    color: #333;
+    text-decoration: none;
+}
+
+/*fullnav__cnt*/
+.fullnav__cnt{
+    align-items: center;
+    background: #333;
+    color: #fff;
+    display: flex;
+    height: 100%;
+    left: 30%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 0;
+}
+.fullnav__cnt__inner{
+    margin: 0 auto;
+    width: 80%;
+}
+.fullnav__cnt__title{
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(100px);
+}
+.fullnav__cnt__menu{
+    list-style: none;
+}
+.fullnav__cnt__menu__item{
+    margin:20px 0;
+    opacity: 0;
+    transform: translateY(100px);
+}
+.fullnav__cnt__menu__item a{
+    color: #F5F5F5;
+}
+
+/*on fullnav__nav*/
+.fullnav.on .fullnav__nav{
+    opacity: 1;
+    width: 30%;
+}
+/*on gnav*/
+.fullnav.on .gnav li{
+    opacity: 1;
+    transform: translateY(0);   
+}
+/*on fullnav__cnt*/
+.fullnav.on .fullnav__cnt{
+    opacity: 1;
+    width: 70%;
+}
+.fullnav.on .fullnav__cnt__title{
+    opacity: 1;
+    transform: translateY(0);
+}
+.fullnav.on .fullnav__cnt__menu__item{
+    opacity: 1;
+    transform: translateY(0);
+}

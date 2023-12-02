@@ -1,0 +1,43 @@
+<span class="letter_color1 ">ユーザー名</span>と
+<span class="letter_color2">パスワード</span>を入力して下さい.<br>
+
+
+<hr width="600" size="3" noshade>
+
+<table align="center">
+    <form action="/auth" method="post">
+        <tr>
+            <td><b><span class="letter_color1">：ユーザー名：</span></b></td>
+            <td><input type="text" name="uname" size="40" maxlength="40"></td>
+        </tr>
+        <tr>
+            <td><b><span class="letter_color2">：パスワード：</span></b></td>
+            <td><input type="password" name="pass" size="40" maxlength="40"></td>
+        </tr>
+</table>
+<br>
+<table align="center">
+    <tr>
+        <td><input class="btn btn-primary" type="submit" value="Login">
+            <input class="btn btn-success" type="reset" value="Reset"></td>
+    </tr>
+    </form>
+</table>
+
+
+<hr width="600" size="3" noshade>
+
+<table align="left">
+    <tr>
+        <td>
+            <a href="/createaccount">
+                アカウントを作成する
+            </a>
+
+            <br>
+
+            <a href="/forgetpass">
+                パスワードを忘れた場合
+            </a>
+        </td>
+</table>

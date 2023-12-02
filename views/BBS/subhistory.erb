@@ -1,0 +1,99 @@
+<table align="left">
+    <tr>
+        <td>
+            <h4><b>コメント投稿ページです．</b></h4>
+        </td>
+    </tr>
+</table>
+<table align="right">
+    <tr>
+        <form action="/privatebbs" method="post">
+            <td><input class="btn btn-primary btn-lg" type="submit" value="あなたの投稿へ"></td>
+        </form>
+        <form action="/publicbbs" method="post">
+            <td><input class="btn btn-primary btn-lg" type="submit" value="みんなの投稿へ"></td>
+        </form>
+    </tr>
+</table>
+<hr width="900" size="3" noshade>
+
+<% @w.each do |a| %>
+<table width="1000" align="center" cellpadding="1" style="table-layout: fixed;">
+    <tr>
+        <td style="word-wrap: break-word;" width="615">
+            <b>：ユーザ名： <font color="#93FFAB"><%= a.username %></font></b></td>
+    </tr>
+    <tr>
+        <td width="40"><b><%= a.write_time %></b></td>
+        <td width="200"><b>ID: <%= a.id %></b></td>
+    </tr>
+</table>
+
+<table width="750" align="center" cellpadding="30" style="table-layout: fixed;">
+    <tr>
+        <td style="word-wrap: break-word;">
+            <font color="#BBFFFF"><%= a.message %></font>
+        </td>
+    </tr>
+</table>
+
+<hr width="900" size="3" noshade>
+
+<table align="center">
+    <form action="/subnewhistory" method="post">
+        <tr>
+            <td><b><span class="letter_color1">：ユーザー名：</span></b></td>
+            <td><%= @user %></td>
+        </tr>
+        <tr>
+            <td><b><span class="letter_color2">：メッセージ：</span></b></td>
+            <td><textarea required type="text" name="message" placeholder="Hello! How are you?" cols="50"
+                    rows="5"></textarea></td>
+        </tr>
+</table>
+
+<table align="center">
+    <tr>
+        <td><input class="btn btn-primary" type="submit" value="Write">
+            <input class="btn btn-success" type="reset" value="Reset"></td>
+    </tr>
+    </form>
+</table>
+
+<% end %>
+
+<center>
+    <hr width="600" size="3" noshade>
+</center>
+
+<% @sw&.each do |b| %>
+<table width="1000" align="center" cellpadding="1" style="table-layout: fixed;">
+    <tr>
+        <td style="word-wrap: break-word;" width="615">
+            <b>：ユーザ名： <font color="#93FFAB"><%= b.username %></font></b></td>
+    </tr>
+    <tr>
+        <td width="40"><b><%= b.write_time %></b></td>
+        <td width="200"><b>ID: <%= b.id %></b></td>
+    </tr>
+</table>
+
+<table width="750" align="center" cellpadding="30" style="table-layout: fixed;">
+    <tr>
+        <td style="word-wrap: break-word;">
+            <font color="#BBFFFF"><%= b.message %></font>
+        </td>
+    </tr>
+</table>
+<% end %>
+
+
+<hr width="900" size="3" noshade>
+
+<%# <table align="left">
+    <tr>
+        <td>
+            <a href="/logout">ログアウト</a>
+        </td>
+    </tr>
+</table> %>

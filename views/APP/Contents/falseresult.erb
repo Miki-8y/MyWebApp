@@ -1,0 +1,36 @@
+<span class="letter_color3">不正解</span><br>
+次のページへ行くには，Nextボタンを押してください．<br>
+
+<hr width="600" size="3" noshade>
+
+[解答]<br>
+
+<% @q.each do |b| %>
+<table align="center">
+  <%if b.question_num == $r_num %>
+  <tr>
+    <td><%= b.japanese %></td>
+  </tr>
+  <tr>
+    <td><span class="letter_color1">◎</span><%= $ae %></td>
+  </tr>
+  <tr>
+    <td><span class="letter_color3">×</span><%= $fe %></td>
+  </tr>
+</table>
+
+--------------------<br>
+：意味： <%= b.janswer_word %><br>
+：単語： <%= b.eanswer_word %><br>
+<% end %>
+<% end %>
+
+<table align="center">
+  <form action="/result" method="post">
+    <tr>
+      <td><input class="btn btn-primary" type="submit" value="Next"></td>
+    </tr>
+  </form>
+</table>
+
+<hr width="600" size="3" noshade>

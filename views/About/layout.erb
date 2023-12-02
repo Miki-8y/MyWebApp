@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+
+  <%# Bootstrap CSS %>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <%# jQuery %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <title>About</title>
+
+  <style type="text/css">
+    body {
+      margin: 0px;
+      padding: 0px;
+      text-align: center;
+      background-color: #F5F5F5;
+    }
+
+    #main {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+      width: 600px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main">
+
+    <%# <font color=white> %>
+
+    <center>
+      <h1>
+        <font size="7">
+          <p class="fadeIn"> About </p>
+        </font>
+      </h1>
+    </center>
+
+    <%# <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+      </div>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/images/MyWebApp_APP.png" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="/images/MyWebApp_BBS.png" class="d-block w-100">
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div> %>
+
+    </right>
+    <a class="menu">
+      <svg class="menu__circle-base" height="50" width="50">
+        <circle class="menu__circle" cx="25" cy="25" r="23" stroke="#000" stroke-width="1" fill="none"></circle>
+      </svg>
+      <span class="menu__line menu__line--top"></span>
+      <span class="menu__line menu__line--center"></span>
+      <span class="menu__line menu__line--bottom"></span>
+    </a>
+    </right>
+
+    <div class="fullnav">
+      <div class="fullnav__nav transition10">
+        <nav class="gnav">
+          <h3 class="fullnav__cnt__title transition10 delay05">
+            <font size="6">Menu</font>
+          </h3>
+          <ul class="gnav__menu">
+            <li class="gnav__menu__item transition10 delay06"><a href="/mainpage">
+                <font size="5">Top</font>
+              </a></li>
+            <li class="gnav__menu__item transition10 delay07"><a href="/about">
+                <font size="5">About</font>
+              </a></li>
+            <%# <li class="gnav__menu__item transition10 delay07"><a href="">Works</a></li>
+            <li class="gnav__menu__item transition10 delay08"><a href="">Company</a></li> %>
+            <li class="gnav__menu__item transition10 delay08"><a href="/contact">
+                <font size="5">Contact</font>
+              </a></li>
+          </ul>
+        </nav>
+      </div>
+      <!--fullnav__nav-->
+      <div class="fullnav__cnt transition10 delay01">
+        <div class="fullnav__cnt__inner">
+          <h3 class="fullnav__cnt__title transition10 delay09">
+            <font size="6">Application</font>
+          </h3>
+          <ul class="fullnav__cnt__menu">
+            <li class="fullnav__cnt__menu__item transition10 delay10"><a href="/privatebbs">
+                <font size="5">BBS</font>
+              </a></li>
+            <li class="fullnav__cnt__menu__item transition10 delay11"><a href="/contentspage1">
+                <font size="5">Word APP</font>
+              </a></li>
+            <li class="fullnav__cnt__menu__item transition10 delay11">
+              <font size="5">Development ...</font>
+            </li>
+            <%# <li class="fullnav__cnt__menu__item transition10 delay10"><a href="">article item3</a></li>
+            <li class="fullnav__cnt__menu__item transition10 delay11"><a href="">article item4</a></li> %>
+          </ul>
+        </div>
+        <!--fullnav__cnt__inner-->
+      </div>
+      <!--fullnav__cnt-->
+    </div>
+    <!--fullnav-->
+
+    <hr width="600" size="3" noshade>
+
+    <%= yield %>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
+    <script type="text/jsx;harmony=true" src="/js/main.js"></script>
+    <script type="text/javascript">
+      $('.menu').on('click', function () {
+        $(this).toggleClass('on');
+        if ($('.fullnav').hasClass('on')) { //fullnavが開いている時
+          $('.fullnav').removeClass('on').fadeOut();
+        } else { //fullnavが閉じている時
+          $('.fullnav').fadeIn();
+          setTimeout(function () {
+            $(".fullnav").addClass("on");
+          }, 200);
+        }
+      });
+    </script>
+</body>
+
+</html>

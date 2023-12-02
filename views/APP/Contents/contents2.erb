@@ -1,0 +1,39 @@
+<h2><span class="letter_color1"><%= @user %></span>さん</h2>
+コンテンツページ２です．
+
+<hr width="600" size="3" noshade>
+
+<% @q.each do |b| %>
+<table align="center">
+  <form action="/judge" method="post">
+
+    <% if b.question_num == $r_num %>
+    <tr>
+      <td><%= b.japanese %></td>
+    </tr>
+    <tr>
+      <td><%= b.english %></td>
+    </tr>
+
+    <input type="hidden" name="question_num" value="<%= b.question_num %>">
+</table>
+<% end %>
+<% end %>
+
+<br>
+
+<table align="center">
+  <tr>
+    <td><input required type="text" name="write_word" placeholder="Type the Word" size="20" maxlength="30"></td>
+  </tr>
+</table>
+<table align="center">
+  <tr>
+    <td><input class="btn btn-primary" type="submit" value="Judge"></td>
+  </tr>
+  </form>
+</table>
+
+<hr width="600" size="3" noshade>
+
+<a href="/contentspage1">コンテンツページ1へ</a>

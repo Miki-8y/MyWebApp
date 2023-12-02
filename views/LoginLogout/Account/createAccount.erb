@@ -1,0 +1,47 @@
+新たに作成する<span class="letter_color1">ユーザー名</span>と
+<span class="letter_color2">パスワード</span>を入力して下さい．<br>
+
+<hr width="600" size="3" noshade>
+
+<table align="center">
+    <form action="/newaccount" method="post">
+        <tr>
+            <td><b><span class="letter_color1">：ユーザー名：</span></b></td>
+            <td><input type="text" name="uname" size="40" maxlength="40"></td>
+        </tr>
+        <tr>
+            <td><b><span class="letter_color2">：新しいパスワード：</span></b></td>
+            <td><input type="password" name="pass1" size="40" maxlength="40"></td>
+        </tr>
+        <tr>
+            <td><b><span class="letter_color2">：新しいパスワード（確認用）：</span></b></td>
+            <td><input type="password" name="pass2" size="40" maxlength="40"></td>
+        </tr>
+</table>
+<br>
+<table align="center">
+    <tr>
+        <td><input class="btn btn-primary" type="submit" value="Create">
+            <input class="btn btn-success" type="reset" value="Reset">
+        </td>
+    </tr>
+    </form>
+</table>
+
+<hr width="600" size="3" noshade>
+
+<table align="left">
+    <tr>
+        <td>
+            <a href="/login">
+                ログイン画面に戻る
+            </a>
+
+            <br>
+
+            <a href="/forgetpass">
+                パスワードを忘れた場合
+            </a>
+        </td>
+    </tr>
+</table>

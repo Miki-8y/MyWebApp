@@ -1,0 +1,62 @@
+<table align="left">
+    <tr>
+        <td>
+            <h4><b>みんなの投稿ページです．</b></h4>
+        </td>
+    </tr>
+</table>
+<table align="right">
+    <tr>
+        <form action="/privatebbs" method="post">
+            <td><input class="btn btn-primary btn-lg" type="submit" value="あなたの投稿へ"></td>
+        </form>
+    </tr>
+</table>
+<hr width="900" size="3" noshade>
+
+<% @w.each do |a| %>
+<table width="1000" align="center" cellpadding="1" style="table-layout: fixed;">
+    <form action="/subnew" method="post">
+        <tr>
+            <td style="word-wrap: break-word;" width="615">
+                <b>：ユーザ名： <font color="#93FFAB"><%= a.username %></font></b></td>
+        </tr>
+        <tr>
+            <td width="40"><b><%= a.write_time %></b></td>
+            <td width="200"><b>ID: <%= a.id %></b></td>
+        </tr>
+</table>
+
+<table width="750" align="center" cellpadding="30" style="table-layout: fixed;">
+    <tr>
+        <td style="word-wrap: break-word;">
+            <font color="#BBFFFF"><%= a.message %></font>
+        </td>
+    </tr>
+</table>
+
+<table align="center">
+    <tr>
+        <td><input class="btn btn-primary" type="submit" value="コメント"></td>
+        <input type="hidden" name="id" value="<%= a.id %>">
+    </tr>
+    </form>
+    <%# <form action="/subhistory" method="post">
+        <input class="btn btn-success" type="submit" value="履歴"></td>
+        </tr>
+    </form> %>
+</table>
+
+<hr width="900" size="3" noshade>
+
+<% end %>
+
+<table align="left">
+    <tr>
+        <td>
+            <a href="/mainpage">メインページに戻る</a>
+            <br>
+            <a href="/logout">ログアウト</a>
+        </td>
+    </tr>
+</table>
